@@ -72,5 +72,26 @@ class DataManager {
         return isValid
     }
     
+    //MARK: - Pagination TableView Config
+    
+    class func registerPreloadingCell(for tableView: UITableView) {
+        tableView.regiserCellByClass(cellClass: PreloadingTableViewCell.self)
+    }
+    
+    class func setupPreloadingCell(_ tableView: UITableView, _ indexPath: IndexPath) -> PreloadingTableViewCell {
+        let cell = tableView.dequeueCellBy(cellClass: PreloadingTableViewCell.self, indexPath: indexPath)
+        cell.activityIndicatorView.startAnimating()
+        return cell
+    }
+    
+    class func scrollViewPaginationSetup(_ scrollView: UIScrollView, method: @escaping ()->Void) {
+        let scrollOffset = scrollView.contentOffset.y + scrollView.frame.size.height
+        let contentSize = scrollView.contentSize.height - 50
+        if scrollOffset >= contentSize {
+            DispatchQueue.main.async {
+                method()
+            }
+        }
+    }
     
 }

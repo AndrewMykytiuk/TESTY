@@ -12,6 +12,10 @@
 		CE22DB052192DF8800F639D6 /* EditUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22DB042192DF8800F639D6 /* EditUserTableViewCell.swift */; };
 		CE22DB0721933B7300F639D6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22DB0621933B7300F639D6 /* User.swift */; };
 		CE22DB0D2199944300F639D6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22DB0C2199944300F639D6 /* DataManager.swift */; };
+		CE4A24F5219EF8E600F73D95 /* PreloadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A24F4219EF8E600F73D95 /* PreloadingTableViewCell.swift */; };
+		CE4A24F7219EF98000F73D95 /* UITableView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A24F6219EF98000F73D95 /* UITableView + Ext.swift */; };
+		CE4A24FB219F090F00F73D95 /* PreloadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE4A24FA219F090F00F73D95 /* PreloadingTableViewCell.xib */; };
+		CE4A24FD219F11A200F73D95 /* UIViewController+ Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A24FC219F11A200F73D95 /* UIViewController+ Ext.swift */; };
 		CE6AB7BC2134484300817F13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB7BB2134484300817F13 /* AppDelegate.swift */; };
 		CE6AB7BE2134484300817F13 /* UsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB7BD2134484300817F13 /* UsersViewController.swift */; };
 		CE6AB7C02134484300817F13 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AB7BF2134484300817F13 /* SavedViewController.swift */; };
@@ -29,6 +33,10 @@
 		CE22DB042192DF8800F639D6 /* EditUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserTableViewCell.swift; sourceTree = "<group>"; };
 		CE22DB0621933B7300F639D6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CE22DB0C2199944300F639D6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		CE4A24F4219EF8E600F73D95 /* PreloadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadingTableViewCell.swift; sourceTree = "<group>"; };
+		CE4A24F6219EF98000F73D95 /* UITableView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + Ext.swift"; sourceTree = "<group>"; };
+		CE4A24FA219F090F00F73D95 /* PreloadingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreloadingTableViewCell.xib; sourceTree = "<group>"; };
+		CE4A24FC219F11A200F73D95 /* UIViewController+ Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ Ext.swift"; sourceTree = "<group>"; };
 		CE6AB7B82134484300817F13 /* TESTY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TESTY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6AB7BB2134484300817F13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE6AB7BD2134484300817F13 /* UsersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewController.swift; sourceTree = "<group>"; };
@@ -104,8 +112,19 @@
 			children = (
 				CEDDCD7D2191E6AF00421B6D /* UserTableViewCell.swift */,
 				CE22DB042192DF8800F639D6 /* EditUserTableViewCell.swift */,
+				CE4A24F4219EF8E600F73D95 /* PreloadingTableViewCell.swift */,
+				CE4A24FA219F090F00F73D95 /* PreloadingTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		CE4A24FE219F1B7900F73D95 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE4A24FC219F11A200F73D95 /* UIViewController+ Ext.swift */,
+				CE4A24F6219EF98000F73D95 /* UITableView + Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CE6AB7AF2134484300817F13 = {
@@ -132,6 +151,7 @@
 				CE22DB082193843300F639D6 /* ViewControllers */,
 				CE22DB092193844B00F639D6 /* Managers */,
 				CE22DB0A2193846A00F639D6 /* Model */,
+				CE4A24FE219F1B7900F73D95 /* Extensions */,
 				CE6AB7C12134484300817F13 /* Main.storyboard */,
 				CE6AB7C42134484400817F13 /* Assets.xcassets */,
 				CE6AB7C62134484400817F13 /* LaunchScreen.storyboard */,
@@ -201,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4A24FB219F090F00F73D95 /* PreloadingTableViewCell.xib in Resources */,
 				CE6AB7C82134484400817F13 /* LaunchScreen.storyboard in Resources */,
 				CE6AB7C52134484400817F13 /* Assets.xcassets in Resources */,
 				CE6AB7C32134484300817F13 /* Main.storyboard in Resources */,
@@ -265,10 +286,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4A24F7219EF98000F73D95 /* UITableView + Ext.swift in Sources */,
 				CE22DB052192DF8800F639D6 /* EditUserTableViewCell.swift in Sources */,
 				CEDDCD7A218F829200421B6D /* NetworkManager.swift in Sources */,
+				CE4A24FD219F11A200F73D95 /* UIViewController+ Ext.swift in Sources */,
 				CE6AB7C02134484300817F13 /* SavedViewController.swift in Sources */,
 				CE6AB7BC2134484300817F13 /* AppDelegate.swift in Sources */,
+				CE4A24F5219EF8E600F73D95 /* PreloadingTableViewCell.swift in Sources */,
 				CE22DB0721933B7300F639D6 /* User.swift in Sources */,
 				CE22DB032192D7ED00F639D6 /* EditUserViewController.swift in Sources */,
 				CE6AB7BE2134484300817F13 /* UsersViewController.swift in Sources */,

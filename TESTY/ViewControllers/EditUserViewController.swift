@@ -13,7 +13,6 @@ import SDWebImage
 import MBProgressHUD
 
 class EditUserViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
-    
 
     @IBOutlet weak var editUserTableView: UITableView!
     @IBOutlet weak var userImageView: UIImageView!
@@ -197,7 +196,6 @@ class EditUserViewController: UIViewController, UITableViewDelegate, UITableView
         cell.selectionStyle = .none
         
         return cell
-        
     }
    
     //MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
@@ -269,21 +267,4 @@ class EditUserViewController: UIViewController, UITableViewDelegate, UITableView
         return true
     }
     
-}
-
-extension EditUserViewController {
-    
-    func showHUD(progressLabel:String){
-        let progressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
-        progressHUD.label.text = progressLabel
-        progressHUD.label.textColor = UIColor(red: 178, green: 34, blue: 34, alpha: 1.0)
-        progressHUD.animationType = .zoomOut
-        progressHUD.mode = .text
-        progressHUD.hide(animated: true, afterDelay: 2.0)
-        
-    }
-    
-    func dismissHUD(isAnimated:Bool) {
-        MBProgressHUD.hide(for: self.view, animated: isAnimated)
-    }
 }
