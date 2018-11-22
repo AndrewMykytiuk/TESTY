@@ -138,7 +138,12 @@ class EditUserViewController: UIViewController, UITableViewDelegate, UITableView
         catch let error as NSError{
             self.showHUD(progressLabel: error.localizedDescription)
         }
-        self.navigationController?.popViewController(animated: true)
+        
+        let tabBarController = self.tabBarController
+        
+        _ = self.navigationController?.popToRootViewController(animated: false)
+        
+        tabBarController?.selectedIndex = 1
     }
     
     @IBAction func changePhotoButtonAction(_ sender: Any) {
