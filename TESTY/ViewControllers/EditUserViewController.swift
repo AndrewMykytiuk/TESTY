@@ -162,7 +162,8 @@ class EditUserViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "EditUserTableViewCell", for: indexPath) as! EditUserTableViewCell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "EditUserTableViewCell", for: indexPath) as! EditUserTableViewCell
+        let cell = tableView.dequeueCellBy(cellClass: EditUserTableViewCell.self, indexPath: indexPath)
         let name = infoDictionary["name"]
         
         let fullNameArr = (name as! String).components(separatedBy: " ")

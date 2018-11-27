@@ -31,7 +31,9 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         self.title = "Users"
         
-        usersTableView.register(UINib(nibName: "PreloadingTableViewCell", bundle: nil), forCellReuseIdentifier: "PreloadingTableViewCell")
+//        usersTableView.register(UINib(nibName: "PreloadingTableViewCell", bundle: nil), forCellReuseIdentifier: "PreloadingTableViewCell")
+        
+        DataManager.registerPreloadingCell(for: usersTableView)
         
         MBProgressHUD.showAdded(to: self.view, animated: true)
         
@@ -130,7 +132,8 @@ class UsersViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return cell
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell", for: indexPath) as! UserTableViewCell
+        let cell = tableView.dequeueCellBy(cellClass: UserTableViewCell.self, indexPath: indexPath)
         cell.titleLabel.text = names[indexPath.row]
         cell.subtitleLabel.text = phones[indexPath.row]
         cell.imagePhotoView.sd_setImage(with: URL(string: images[indexPath.row]))
